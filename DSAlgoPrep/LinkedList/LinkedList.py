@@ -57,9 +57,11 @@ node3.next=node4
 # print data
 linked_list.printList()
 
+# insert at 0
 linked_list.insertNode(10,0)
 linked_list.printList()
 
+# insert at other than 0
 linked_list.insertNode(11,2)
 linked_list.printList()
 
