@@ -17,8 +17,23 @@ class LinkedList:
             previous_node= self.get_value(pos-1)
             target.next= previous_node.next
             previous_node.next= target
-            print('After insert')
-            self.print_list()
+            
+    def delete_node(self, key):
+        temp= self.head
+        if(temp is None):
+            return
+        if (temp.data==key):
+            self.head= temp.next
+            temp= None
+            return
+        
+        while(temp.next.data!= key):
+            temp= temp.next
+        
+        target_node= temp.next
+        temp.next= target_node.next
+        target_node.next= None
+        
     
     def get_value(self, pos):
         counter=0 #head starts=0, counter= 1 if head starts=1
@@ -26,7 +41,6 @@ class LinkedList:
         while(counter<pos):
             temp= temp.next
             counter+=1
-        print(temp.data)
         return temp
     
     def print_list(self):
@@ -37,7 +51,7 @@ class LinkedList:
             temp= temp.next
         list_str+= str(temp.data)
         print(list_str)
-        
+
 # create the linkedList
 linked_list= LinkedList()
 
@@ -53,11 +67,17 @@ node1.next=node2
 node2.next=node3
 node3.next=node4
 
-# print data
-linked_list.printList()
+# print list
+linked_list.print_list()
 
-# consider head starts at 0
 # get value at position
-linked_list.get_value(3)
+# linked_list.get_value(3)
+
 #insert node
-linked_list.insert_node(6,2)
+linked_list.insert_node(10,2)
+linked_list.insert_node(20,2)
+linked_list.print_list()
+
+# delete node
+linked_list.delete_node(10)
+linked_list.print_list()
