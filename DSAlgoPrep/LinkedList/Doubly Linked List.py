@@ -59,19 +59,19 @@ class DoublyLinkedList:
             temp.next= new_node
             new_node.previous= temp
             return self.head
-        
-        i=1
-        while(i<pos):
-            temp= temp.next
-            i+=1
-        
-        node_at_target= temp.next
-        node_at_target.previous= new_node
-        new_node.next= node_at_target
-        
-        temp.next= new_node
-        new_node.previous= temp
-        
+
+        counter = 1
+        while (counter < pos):
+            temp = temp.next
+            counter += 1
+        node_at_target = temp
+        previous_node = node_at_target.previous
+
+        previous_node.next = new_node
+        new_node.previous = previous_node
+
+        new_node.next = node_at_target
+        node_at_target.previous = new_node
         return self.head
     
     def delete_node(self, pos):
@@ -123,5 +123,8 @@ dll.insert_node(6,3)
 dll.print_list()
 dll.count_elements()
 
-dll.delete_node(2)
+dll.insert_node(10000,3)
 dll.print_list()
+
+# dll.delete_node(2)
+# dll.print_list()
