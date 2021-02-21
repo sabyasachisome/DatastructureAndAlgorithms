@@ -15,7 +15,7 @@ class LRUCache:
 
     def put(self, key, value):
         if key not in self.l_map:
-            if len(self.que==self.capacity):
+            if len(self.que)==self.capacity:
                 oldest= self.que.popleft()
                 del self.l_map[oldest]
         else:
