@@ -11,7 +11,7 @@ class Solution:
         else:
             return -1
 
-    def binary_search_iter(self, low, high, arr, target):
+    def binary_search_iter(self, arr, low, high, target):
         while(low<=high):
             mid= (low+high)//2
             if arr[mid]==target:
@@ -25,6 +25,7 @@ class Solution:
 arr=[1,2,3,4,5]
 
 s= Solution()
+
 print(s.binary_search(arr, 0, len(arr)-1,4))
 
 print(s.binary_search_iter(arr, 0, len(arr)-1,4))
