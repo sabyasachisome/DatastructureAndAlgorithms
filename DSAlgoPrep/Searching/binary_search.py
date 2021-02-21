@@ -27,5 +27,4 @@ arr=[1,2,3,4,5]
 s= Solution()
 
 print(s.binary_search(arr, 0, len(arr)-1,4))
-
 print(s.binary_search_iter(arr, 0, len(arr)-1,4))
