@@ -11,12 +11,10 @@ class Solution:
                 no_of_boats+=1
                 break
             if sorted_people[i]+sorted_people[j]<=limit:
-                no_of_boats += 1
                 i+=1
-                j-=1
-            else:
-                no_of_boats += 1
-                j-=1
+
+            no_of_boats += 1
+            j-=1
         return no_of_boats
 
 people = [1,2]
