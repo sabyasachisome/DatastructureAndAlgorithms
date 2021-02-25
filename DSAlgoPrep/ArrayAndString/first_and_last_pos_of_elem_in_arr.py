@@ -10,7 +10,7 @@ class Solution:
             logging.info('mid= {}'.format(mid))
             if nums[mid]==target:
                 logging.info('{} {} {}'.format(mid, nums[mid],target))
-                if ((mid-1!=0 and nums[mid-1]!=target) or mid==0):
+                if ((mid-1>=0 and nums[mid-1]!=target) or mid==0):
                     logging.info('inside second')
                     return mid
                 right= mid-1
@@ -24,7 +24,7 @@ class Solution:
         while left<=right:
             mid= (left+right)//2
             if nums[mid]==target:
-                if ((mid+1!=len(nums) and nums[mid+1]!=target) or mid==len(nums)-1):
+                if ((mid+1<len(nums) and nums[mid+1]!=target) or mid==len(nums)-1):
                     return mid
                 left=mid+1
             elif nums[mid]>target:
