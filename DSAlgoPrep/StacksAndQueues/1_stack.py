@@ -2,7 +2,7 @@ class PlateStack:
     def __init__(self):
         self.st=[]
 
-    def push(self):
+    def push(self,x):
         self.st.append(x)
 
     def pop(self):
