@@ -39,7 +39,6 @@ def dijkstra(graph, start, goal):
                 min_node= node
 
         for child_node, weight in graph[min_node].items():
-            # print(child_node,weight)
             if shortest_distance[min_node]+weight<shortest_distance[child_node]:
                 shortest_distance[child_node]= shortest_distance[min_node]+weight
                 predecessor[child_node]= min_node
