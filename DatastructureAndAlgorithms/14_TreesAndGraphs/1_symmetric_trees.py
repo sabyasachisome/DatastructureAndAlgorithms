@@ -17,7 +17,15 @@
 # #
 # #
 # # sol= Solution
+"""
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
 
+Input: root = [1,2,2,3,4,4,3]
+Output: true
+
+Input: root = [1,2,2,null,3,null,3]
+Output: false
+"""
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -26,21 +34,6 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    # def create_binary_tree(self, arr):
-    #     root= TreeNode(arr[0])
-    #     root.left= TreeNode(arr[1])
-    #     root.right= TreeNode(arr[2])
-    #     queue=[]
-    #     queue.append(root.left, root.right)
-    #     ctr=3
-    #     arr_len= len(arr)
-    #     while(queue):
-    #         left= queue.pop(0)
-    #         right= queue.pop(0)
-    #         if
-    #         left.left= arr
-        # add 4 items of array as left and right of the queue elements
-        # add the elements to the queue
 
     def isSymmetric(self, root: TreeNode) -> bool:
         stk= [root.left,root.right]
