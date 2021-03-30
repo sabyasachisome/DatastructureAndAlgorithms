@@ -18,8 +18,8 @@ class Solution:
         if i<arr_len:
             temp= TreeNode(arr[i])
             root= temp
-            root.left= self.create_bst(arr, root.left, arr_len, 2*i+1)
-            root.right = self.create_bst(arr, root.right, arr_len, 2*i+2)
+            root.left= self.create_bt(arr, root.left, arr_len, 2*i+1)
+            root.right = self.create_bt(arr, root.right, arr_len, 2*i+2)
         return root
 
     def create_bst(self, arr):
@@ -55,15 +55,29 @@ class Solution:
             self.preorder(root.right)
 
     def kthSmallest(self, root: TreeNode, k: int) -> int:
-        pass
+        self.k= k
+        self.inorder_search(root)
+        return self.ans
+
+    def inorder_search(self, node: TreeNode):
+        if node is not None:
+            self.inorder_search(node.left)
+            self.k-=1
+            if self.k==0:
+                self.ans= node.val
+            self.inorder_search(node.right)
 
 sol= Solution()
-arr=[3,1,4,None,2]
-arr=[4,2,5,1,6]
+# arr=[3,1,4,None,2]
+# arr=[4,2,5,1,6]
 # root_bst= TreeNode(arr[0])
 # for i in range(1, len(arr)):
 #     sol.bst_insert_node(root_bst, TreeNode(arr[i]))
 # sol.preorder(root_bst)
-arr.sort()
-root= sol.create_bst(arr)
+# arr.sort()
+# root= sol.create_bst(arr)
+arr= [5,3,6,2,4,None,None,1]
+root= sol.create_bt(arr, None, len(arr), 0)
 sol.preorder(root)
+print(root.val)
+print(sol.kthSmallest(root, 3))
