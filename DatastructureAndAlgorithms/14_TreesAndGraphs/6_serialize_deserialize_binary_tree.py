@@ -43,7 +43,6 @@ class Codec:
             self.preorder(root.left)
             self.preorder(root.right)
 
-
     def serialize(self, root):
         """Encodes a tree to a single string.
 
