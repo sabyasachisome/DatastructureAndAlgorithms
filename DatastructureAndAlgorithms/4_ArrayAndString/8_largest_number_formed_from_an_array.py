@@ -65,7 +65,7 @@ class Solution:
 
     def largest_number(self, arr: List[int]) -> str:
         largest_num= self.merge_sort(arr)
-        return largest_num
+        return ''.join(map(str,largest_num))
 
 if __name__ == '__main__':
     tc= int(input())
@@ -74,6 +74,6 @@ if __name__ == '__main__':
         # arr = [3, 30, 34, 5, 9]
         arr= list(map(str, input().strip().split()))
         ob= Solution()
-        ans= ob.merge_sort(arr)
-        print(''.join(map(str,ans)))
+        ans= ob.largest_number(arr)
+        print(ans)
         tc-=1
