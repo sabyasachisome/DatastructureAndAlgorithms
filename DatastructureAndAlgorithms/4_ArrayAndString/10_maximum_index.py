@@ -34,7 +34,7 @@ which finds and returns maximum index difference. Printing the output will be ha
 class Solution:
     #Complete this function
     # Function to find the maximum index difference.
-    def maxIndexDiff(self,arr, n):
+    def maxIndexDiff(self, arr, n):
         # traverse the array:
         #     traverse from last till before current index:
         #         if inner loop is greater than outer loop element and diff in index > max:
@@ -48,6 +48,6 @@ class Solution:
                 j-=1
         return max_diff
 
-sol= Solution()
-arr=[34, 8, 10, 3, 2, 80, 30, 33, 1]
-print(sol.maxIndexDiff(arr, len(arr)))
+# sol= Solution()
+# arr=[34, 8, 10, 3, 2, 80, 30, 33, 1]
+# print(sol.maxIndexDiff(arr, len(arr)))
