@@ -48,6 +48,6 @@ class Solution:
                 j-=1
         return max_diff
 
-# sol= Solution()
-# arr=[34, 8, 10, 3, 2, 80, 30, 33, 1]
-# print(sol.maxIndexDiff(arr, len(arr)))
+sol= Solution()
+arr=[34, 8, 10, 3, 2, 80, 30, 33, 1]
+print(sol.maxIndexDiff(arr, len(arr)))
