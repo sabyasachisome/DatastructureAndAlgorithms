@@ -9,7 +9,7 @@ Input: N = 6
 arr = {1, 2, 3, 6, 5, 4}
 Output: {1, 2, 4, 3, 5, 6}
 Explaination: The next permutation of the
-given array is {1, 2, 4, 3, 5, 6}.
+given array is {1, 2, 4, 3, 5, 6}
 
 Example 2:
 
@@ -31,16 +31,17 @@ class Solution:
         if start==0:
             return sorted(arr)
         check_idx= start-1
-        single_max_element_idx= start
-        for idx in range(start, N-1):
-            if arr[idx+1]<arr[idx] and arr[idx+1]!=arr[check_idx]:
-                single_max_element_idx=idx+1
-        arr[check_idx], arr[single_max_element_idx]= arr[single_max_element_idx], arr[check_idx]
-        sorted_part= sorted(arr[start:])
-        arr= arr[:start]+sorted_part
-        return arr
+        next_greater_elem_subarray= sorted(arr[start:])
+        for i in range(len(next_greater_elem_subarray)):
+            if next_greater_elem_subarray[i]>arr[check_idx]:
+                next_greater_elem_subarray[i], arr[check_idx]= arr[check_idx], next_greater_elem_subarray[i]
+                break
+        new_arr= arr[:start]+next_greater_elem_subarray
+        return new_arr
 
 sol= Solution()
 arr= [1, 2, 3, 6, 5, 4]
 arr1=[3,2,1]
-print(sol.nextPermutation(len(arr1), arr1))
+arr2=[4,5,2,1,3]
+arr3=[62, 92, 96, 43, 28, 37, 92, 5, 3, 54, 93, 83, 22]
+print(sol.nextPermutation(len(arr), arr))
