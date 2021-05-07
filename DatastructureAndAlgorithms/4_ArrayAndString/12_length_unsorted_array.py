@@ -28,12 +28,25 @@ Initial array: 0 1 15 25 6 7 30 40 50
 Final array:   0 1 6 7 15 25 30 40 50
 (After sorting the bold part)
 """
-
+# from collections import defaultdict
+# from typing import List
 class Solution:
 
-	def printUnsorted(self,arr, n):
-		print(arr)
+	def printUnsorted(self, arr, n):
+		arr_index_map= {}
+		for idx in range(len(arr)):
+			arr_index_map[arr[idx]]= idx
+		sorted_arr_index_map= {k:v for k, v in sorted(arr_index_map.items(), key= lambda item: item[0])}
+		sorted_arr_index_list= list(sorted_arr_index_map.values())
+		for idx in range(len(sorted_arr_index_list)-1):
+			if sorted_arr_index_list[idx+1]-sorted_arr_index_list[idx]!=1:
+				start= idx+1
+				break
+		for idx in range(start, len(sorted_arr_index_list)-1):
+			if sorted_arr_index_list[idx+1]-sorted_arr_index_list[idx]==1:
+				end= idx-1
+		return start, end
 
 sol= Solution()
 arr=[10,12,20,30,25,40,32,31,35,50,60]
-sol.printUnsorted(arr, len(arr))
+print(sol.printUnsorted(arr, len(arr)))
