@@ -38,10 +38,12 @@ class Solution:
 			arr_index_map[arr[idx]]= idx
 		sorted_arr_index_map= {k:v for k, v in sorted(arr_index_map.items(), key= lambda item: item[0])}
 		sorted_arr_index_list= list(sorted_arr_index_map.values())
+		start=0
 		for idx in range(len(sorted_arr_index_list)-1):
 			if sorted_arr_index_list[idx+1]-sorted_arr_index_list[idx]!=1:
 				start= idx+1
 				break
+		end=0
 		for idx in range(start, len(sorted_arr_index_list)-1):
 			if sorted_arr_index_list[idx+1]-sorted_arr_index_list[idx]==1:
 				end= idx-1
@@ -49,4 +51,5 @@ class Solution:
 
 sol= Solution()
 arr=[10,12,20,30,25,40,32,31,35,50,60]
-print(sol.printUnsorted(arr, len(arr)))
+arr1=[1,468,335,170,225,479,359,463,465,206,146,282,328,462,492,496,443,328,437,392,105,403,154,293,383,422,217,219,396,448,227,272,39,370,413,168,300,36,395,204,312,323]
+print(sol.printUnsorted(arr1, len(arr1)))
