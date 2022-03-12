@@ -63,7 +63,7 @@ class LinkedList:
         list_strn += str(temp.data)
         print(list_strn)
 
-"""
+il"""
 note:
 here, indexing and length of linked_list is implemented similar to list
 """
