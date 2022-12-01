@@ -173,16 +173,16 @@ nums contains distinct values sorted in ascending order.
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         start= 0
-        end= len(nums)
+        end= len(nums)-1
         while end>=start:
             middle= start+ (end-start)//2
             if nums[middle]==target:
                 return middle
             elif nums[middle]>target:
                 end= middle-1
-            elif nums[middle]<=target:
+            else:
                 start= middle+1
-        return -1
+        return start
     
 sol= Solution()
-sol.searchInsert([1,3,5,10],11)
+sol.searchInsert([1,3,5,10],10)
