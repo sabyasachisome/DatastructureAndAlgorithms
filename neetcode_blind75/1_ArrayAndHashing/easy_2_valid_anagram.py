@@ -29,7 +29,7 @@ class Solution:
                 s_map[char]=1
             else:
                 s_map[char]+=1
-        print(s_map)
+        # print(s_map)
         for char in t:
             if char not in t_map:
                 t_map[char]=1
@@ -39,9 +39,11 @@ class Solution:
         for s_key in s_map:
             if s_key not in t_map or s_map[s_key]!= t_map[s_key]:
                 anagrag_flag= False
+                break
         for t_key in t_map:
             if t_key not in s_map or s_map[t_key]!= t_map[t_key]:
                 anagrag_flag= False
+                break
         return anagrag_flag==True
 
 sol= Solution()
