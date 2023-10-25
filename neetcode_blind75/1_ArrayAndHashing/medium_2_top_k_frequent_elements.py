@@ -42,6 +42,23 @@ class Solution:
                 num+=1
         return final_op
 
+    def topKFrequent1(self, nums: List[int], k: int)-> List[int]:
+        freq_map={}
+        all_elem_list=[[] for _ in range(len(nums)+1)]
+        for idx in range(len(nums)):
+            if nums[idx] not in freq_map:
+                freq_map[nums[idx]]=1
+            else:
+                freq_map[nums[idx]]+=1
+        
+        for key,val in freq_map.items():
+            all_elem_list[val].append(key)
+        final_arr_list=[]
+        for idx in range(len(all_elem_list)-1,-1,-1):
+            for item in all_elem_list[idx]:
+                final_arr_list.append(item)
+            if len(final_arr_list)==k:
+                return final_arr_list
 
 sol= Solution()
-sol.topKFrequent([1,1,1,2,2,3], 2)
+print(sol.topKFrequent1([1,1,1,2,2,3], 2))
